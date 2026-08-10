@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Browser-tab title is set from job.tab_title at runtime; this is a fallback. -->
+  <title>Fit Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- ===== TOP BAR (TIFF chrome) ===== -->
+  <div class="topbar" id="top">
+    <div class="topbar-inner">
+      <img class="logo" src="./tiff-logo-white.svg" alt="TIFF Investment Management" />
+      <a class="posting-link" id="posting-link" href="#" target="_blank" rel="noopener noreferrer">
+        View the live posting <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== ROLE TABS (rendered from data.roles; hidden if only one role) ===== -->
+  <nav class="role-tabs" id="role-tabs-nav" aria-label="Open roles">
+    <div class="role-tabs-inner" id="role-tabs" role="tablist"></div>
+  </nav>
+
+  <!-- ===== POSTING HEADER ===== -->
+  <header class="posting-header">
+    <div class="posting-inner">
+      <h1 class="job-title" id="job-title"><!-- job.role (+ employment) --></h1>
+      <p class="job-location" id="job-location">
+        <span class="pin" aria-hidden="true">◍</span><span id="job-location-text"></span>
+      </p>
+
+      <!-- Candidate framing band -->
+      <div class="candidate-band">
+        <p class="candidate-kicker" id="candidate-kicker"><!-- job.candidate_kicker --></p>
+        <p class="candidate-lede" id="candidate-lede"><!-- job.candidate_lede --></p>
+        <p class="candidate-stat" id="candidate-stat" role="status"><!-- computed --></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN: JD prose + side peek ===== -->
+  <main class="layout">
+    <section class="jd-column" aria-label="Job description">
+      <div id="jd-root"><!-- prose rendered here from jd_prose --></div>
+    </section>
+
+    <aside class="peek" id="peek" aria-live="polite" aria-labelledby="peek-heading">
+      <div class="peek-scrim" id="peek-scrim" hidden></div>
+      <div class="peek-panel" role="region" tabindex="-1">
+        <button class="peek-close" id="peek-close" aria-label="Close details" hidden>&times;</button>
+
+        <div class="peek-empty" id="peek-empty">
+          <div class="peek-empty-icon" aria-hidden="true">✦</div>
+          <p class="peek-empty-title">Select a Phrase from the Job Description</p>
+          <p class="peek-empty-text">Click any underlined phrase in the job description to see some of Ryan's relevant experience.</p>
+        </div>
+
+        <div class="peek-content" id="peek-content" hidden>
+          <h2 class="peek-heading" id="peek-heading"></h2>
+          <p class="peek-label">Ryan's Experience:</p>
+          <div class="peek-cards" id="peek-cards"></div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <div class="load-error" id="load-error" hidden></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
