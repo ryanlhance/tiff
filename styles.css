@@ -29,8 +29,8 @@
   /* one highlight system (no match hierarchy) */
   --hl-bg:       var(--c-teal-soft);
   --hl-bg-hover: var(--c-teal-soft);
-  --hl-line:     var(--c-teal);
-  --hl-line-on:  var(--c-navy);
+  --hl-line:     rgba(15, 146, 128, 0.41);
+  --hl-line-on:  var(--c-teal);
   --hl-active:   var(--c-teal-mid);
 
   --display: "Newsreader", Georgia, "Times New Roman", serif;
@@ -219,7 +219,7 @@ a { color: var(--c-teal); }
   left: 4px; top: 0.72em;
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: var(--c-orange);
+  background: var(--c-teal);
 }
 
 /* the bold role name in the intro */
@@ -244,8 +244,8 @@ a { color: var(--c-teal); }
   text-decoration: underline;
   text-decoration-style: dotted;
   text-decoration-color: var(--hl-line);
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 2px;   /* sits close to the words */
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;   /* sits close to the words */
   transition: background 120ms ease, text-decoration-color 120ms ease;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
