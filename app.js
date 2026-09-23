@@ -20,7 +20,6 @@
     roleTabsNav:  document.getElementById("role-tabs-nav"),
     roleTabs:     document.getElementById("role-tabs"),
     jobTitle:     document.getElementById("job-title"),
-    jobLocation:  document.getElementById("job-location-text"),
     kicker:       document.getElementById("candidate-kicker"),
     lede:         document.getElementById("candidate-lede"),
     stat:         document.getElementById("candidate-stat"),
@@ -148,8 +147,6 @@
 
     el.jobTitle.textContent =
       (job.role || "") + (job.employment ? " (" + job.employment + ")" : "");
-    el.jobLocation.textContent =
-      (job.location || "") + (job.employment ? " · " + job.employment : "");
     el.kicker.textContent = job.candidate_kicker || (DATA.meta && DATA.meta.candidate) || "";
     el.lede.textContent = job.candidate_lede || "";
     el.stat.textContent = job.candidate_stat || "";

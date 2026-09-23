@@ -140,14 +140,6 @@ a { color: var(--c-teal); }
   max-width: 38ch;
   text-wrap: balance;
 }
-.job-location {
-  margin: 0 0 22px;
-  font-size: 0.98rem;
-  color: var(--secondary);
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
 .pin { color: var(--c-orange); font-size: 1.05rem; }
 
 /* candidate framing band */
